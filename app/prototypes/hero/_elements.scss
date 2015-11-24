@@ -54,6 +54,13 @@
 
 }
 
+%hero__heading{
+
+	text-align: center;
+	@include block;
+
+}
+
 
 %hero__footer{
 

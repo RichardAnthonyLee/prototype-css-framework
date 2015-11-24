@@ -2,11 +2,345 @@
 
 
 
-%action{
 
-   @include util-button( $primary-color );
-   @include single-transition( all, .3s, ease-in-out );
-   margin-bottom: 5px;
-   @include block;
 
+
+
+
+
+.action{
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;  
+}
+
+//action button colors
+$action-colors: (
+    primary: #5C5CFF
+);
+
+
+//base minimal button styles
+
+@mixin _p-button(){
+	
+  $size:      1em; 
+	$height:   ($size * 2);
+
+	font-size:     $size;
+	height:        $height+.25; 
+	line-height:   $height;
+	padding:       0px $size;
+	display:       inline-block;
+	cursor:        pointer; 
+  position:      relative;
+  text-align:    center;
+  @include       single-transition( all, .3s, ease-in-out );
+  margin-bottom: $size/2;
+  margin-right:  $size/4;
+  overflow:      hidden;
+  vertical-align: middle;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);  
+
+}
+
+@mixin _p-button-circle{
+  
+  $size: 1em;
+  $size: $size*2+.3;
+  
+  height: $size;
+  width:  $size;
+  line-height: $size;
+  border-radius: 50%;
+  padding: 0px;
+  
+}
+
+
+@mixin _p-button-style( $text-color, $border, $bg, $radius: false ){
+  
+	border: $border;
+	background: $bg;
+  color: $text-color;
+  
+  @if($radius){
+      border-radius: $radius;
+  }
+
+}
+
+
+@mixin _p-button-size( $size ){
+
+	font-size: $size;
+
+}
+
+@mixin _p-button-standard( $color, $text ){
+
+  @include _p-button-style( $text, .05em solid darken($color, 5%), $color, .05em );
+  
+  //only apply hover styles when button is not disabled
+  
+  &:not(.action--disabled):hover{
+    
+    @include _p-button-style( $text, 
+                              .05em solid lighten($color,4%),
+                              lighten($color,4%) );
+   
+  }
+  
+  &:not(.action--disabled):active,
+  &--active{
+    
+    @include _p-button-style( $text, 
+                              .05em solid darken($color,5%),
+                              darken($color,5%) );  
+    
+   @include single-transition( background-color, 0s, ease-in-out );
+    
+    
+  }
+  
+}
+
+
+.action{
+  $color: map-get( $action-colors, 'primary' );
+  @include _p-button;
+  @include _p-button-standard( $color, #fff );
+  font-size: 22px;
+}
+
+.action__text{
+  font-size: .9em;
+}
+
+.action--signal{
+  @include _p-button-circle;
+}
+
+.action--labelled{
+  padding-left: 2.75em;
+}
+
+.action__icon{
+  display: inline-block;
+  @include single-transition( all, .3s, ease-in-out );
+}
+
+.action__icon + .action__text,
+.action__text + .action__icon{
+  margin-left: .3em;
+}
+
+.action--signal .action__text{
+  positition: absolute;
+  left: -1000px;
+  margin: 0px;
+}
+
+.action--signal .action__icon{
+  margin: 0px auto;
+}
+
+.action__label{
+  height: 100%;
+  width: 2em;
+  position: absolute;
+  left:     0px;
+  @include single-transition( all, .3s, ease-in-out );
+
+}
+
+.action__label--action{
+  box-shadow: inset 0px -10px 50px rgba(0,0,0,.2);
+}
+
+.action:hover [data-hover*="action__icon:pulse-scale"]{
+  
+    @extend .anim-pulse-scale;
+  
+}
+
+.action--extended{
+  
+  height: 3.7em;  
+  padding: 0px 1.5em;
+  
+}
+
+.action--extended.action--labelled{
+  
+  padding-left: 4.5em;
+  
+}
+
+.action--extended .action__label{
+  
+  width: 3.5em;
+  
+}
+
+.action--extended .action__label .action__icon{
+  
+  line-height: 3.7em;
+  font-size: 1.5em;
+  position: relative;
+  top: -.75em;
+  
+}
+
+.action--extended .action__text{
+  
+  text-align: left;
+  
+}
+
+.action__body, 
+.action__section{
+    display: block;
+    height: 100%;
+   @include single-transition( all, .2s, ease-in-out );
+}
+
+.action__section + .action__section{
+  background-color: rgba(0, 0, 0, .3);
+}
+
+.action--extended .action__body,
+.action--extended .action__section{
+  
+  padding: .5em 0px;
+  
+}
+
+.action--revealer .action__body,
+.action--revealer{
+  
+  padding: 0px;
+  
+}
+
+.action--revealer .action__section{
+  
+  padding-left: 1em;
+  padding-right: 1em;
+  
+}
+
+.action--revealer.action--labelled .action__section{
+  
+  padding-left: 2.75em;
+  
+}
+
+.action--revealer.action--extended .action__section{
+  
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  
+}
+
+.action--revealer:hover .action__section{
+  
+  @include transform( translateY( -2.25em ) );
+  
+}
+
+
+.action--extended.action--revealer:hover .action__section{
+  
+  @include transform( translateY( -3.7em ) );
+  
+}
+
+.action__body .action__text{
+  display: block;
+  line-height: normal;
+  line-height: 1.4em;
+}
+
+.action__text--secondary{
+  font-size: .85em;
+}
+
+.action__text--lead{
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.action__icon--loading{
+  display: none;
+}
+
+
+[class*="--loading"] [data-loading*="::out"]{
+  display: none;
+}
+
+[class*="--loader"]{
+  display: none;
+}
+
+.action--loader{
+  display: inline-block;
+  overflow: visible;
+}
+
+[class*="--disabled"]{
+  opacity: .7;
+  
+  &, &:hover, &:active{
+    box-shadow: none;
+    @include animation-name( _ );
+    cursor: default;
+  }
+}
+
+
+[class*="--loading"] [class*="--loader"]{
+  display: inline-block;
+}
+
+.action--extended.action--labelled.action--revealer{
+  padding-left: 3.5em;
+}
+
+.action--extended.action--labelled.action--revealer .action__section{
+  margin-left: -3.5em;
+  padding-left: 4.5em;
+}
+
+.loader{
+  height: .3em;
+  overflow: hidden;
+  background-color: #ccc;
+  border-radius: .01em;
+  display: block;
+}
+
+.loader__progress{
+  height: 100%;
+  width: 0px;
+  background-color: lighten( map-get( $action-colors, primary ), 14% );
+  display: block;
+}
+
+.action--loader .loader{
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 0px;
+  width: 100%;
+}
+
+.action--loading .loader{
+  display: block;
+}
+
+.action__section{
+  height: 103%;
+  display: block;
+  position: relative;
 }

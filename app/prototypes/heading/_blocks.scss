@@ -1,0 +1,12 @@
+
+
+%heading{
+
+  	color: $heading-color;
+	font-family: $font-lead;
+	font-weight: $font-weight-lead;
+	display: block;
+	@include util-clearfix;
+	@include block;
+
+}

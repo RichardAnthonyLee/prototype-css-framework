@@ -18,7 +18,7 @@ $screen-sm: 750px;
 $screen-xs: 519px;
 
 //container
-$container-width: 1200px;
+$container-width: 1300px;
 
 //z indexes
 $z-top: 99999;
@@ -90,6 +90,19 @@ $heading-md:   $text-xl;
 $heading-ml:   3.7;
 $heading-lg:   4.5;
 $heading-xl:   5;
+
+$heading-sizes: (
+    p1 : 2em,
+    p2 : 1.8em,
+    p3 : 1.65em,
+    p4 : 1.55em,
+    p5 : 1.4em 
+);
+
+//action button colors
+$action-colors: (
+    primary: #5C5CFF
+);
 
 $heading-color-overlay: $text-color-overlay;
 $heading-color:  $text-color;

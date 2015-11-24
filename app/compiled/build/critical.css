@@ -1,0 +1,316 @@
+/* line 4, ../../prototypes/hero/_blocks.scss */
+[class*='-hero s_'] {
+  display: block;
+  width: 100%;
+  background-color: #ccc;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+}
+@media only screen and (min-width: 750px) {
+  /* line 4, ../../prototypes/hero/_blocks.scss */
+  [class*='-hero s_'] {
+    height: 100%;
+  }
+}
+@media only screen and (max-height: 700px) {
+  /* line 4, ../../prototypes/hero/_blocks.scss */
+  [class*='-hero s_'] {
+    height: auto;
+  }
+}
+
+/* line 3, ../../prototypes/heading/_blocks.scss */
+[class*='-heading s_'] {
+  color: #000;
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  display: block;
+}
+/* line 47, ../../prototypes/config/library/mixins/_util.scss */
+[class*='-heading s_']:before, [class*='-heading s_']:after {
+  content: "";
+  display: table;
+}
+/* line 52, ../../prototypes/config/library/mixins/_util.scss */
+[class*='-heading s_']:after {
+  clear: both;
+}
+
+/* line 3, ../../prototypes/hero/_elements.scss */
+[class*='-hero__inner s_'] {
+  height: inherit;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  margin: 0px auto;
+  max-width: 1300px;
+  padding: util-rect-sizing(2.5);
+  padding: util-rect-sizing(2.5);
+}
+/* line 47, ../../prototypes/config/library/mixins/_util.scss */
+[class*='-hero__inner s_']:before, [class*='-hero__inner s_']:after {
+  content: "";
+  display: table;
+}
+/* line 52, ../../prototypes/config/library/mixins/_util.scss */
+[class*='-hero__inner s_']:after {
+  clear: both;
+}
+
+/* line 15, ../../prototypes/hero/_elements.scss */
+[class*='-hero__body s_'] {
+  display: block;
+  width: 100%;
+  padding: 100px 0px;
+  height: inherit;
+}
+@media only screen and (min-width: 750px) {
+  /* line 15, ../../prototypes/hero/_elements.scss */
+  [class*='-hero__body s_'] {
+    padding: 0px;
+    display: table;
+  }
+}
+@media only screen and (max-height: 700px) {
+  /* line 15, ../../prototypes/hero/_elements.scss */
+  [class*='-hero__body s_'] {
+    padding: 100px 0px;
+    height: inherit;
+  }
+}
+
+/* line 40, ../../prototypes/hero/_elements.scss */
+[class*='-hero__content s_'] {
+  display: block;
+  width: 100%;
+  color: inherit;
+}
+@media only screen and (min-width: 750px) {
+  /* line 40, ../../prototypes/hero/_elements.scss */
+  [class*='-hero__content s_'] {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+/* line 57, ../../prototypes/hero/_elements.scss */
+[class*='-hero__heading s_'] {
+  text-align: center;
+}
+
+/* line 65, ../../prototypes/hero/_elements.scss */
+[class*='-hero__footer s_'] {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  display: block;
+  z-index: 1;
+}
+@media only screen and (max-width: 750px) {
+  /* line 65, ../../prototypes/hero/_elements.scss */
+  [class*='-hero__footer s_'] {
+    display: none;
+  }
+}
+
+/* line 85, ../../prototypes/hero/_elements.scss */
+[class*='-hero__skip s_'] {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -24px;
+}
+@media only screen and (min-width: 1130px) {
+  /* line 85, ../../prototypes/hero/_elements.scss */
+  [class*='-hero__skip s_'] {
+    bottom: 40px;
+  }
+}
+
+/* line 4, ../../prototypes/hero/_modifiers.scss */
+[class*='-hero--p2'] {
+  height: auto;
+}
+
+@media only screen and (min-width: 750px) {
+  /* line 11, ../../prototypes/hero/_modifiers.scss */
+  [class*='-hero--p2'] [class*='-hero__inner s_'] {
+    padding-top: 100px;
+    padding-top: 10rem;
+    padding-bottom: 100px;
+    padding-bottom: 10rem;
+  }
+}
+
+/* line 8, ../../prototypes/heading/_modifiers.scss */
+[class*='-heading--p1'] {
+  font-size: 2em;
+  line-height: 2em;
+  margin: 0.5em 0;
+}
+
+/* line 8, ../../prototypes/heading/_modifiers.scss */
+[class*='-heading--p2'] {
+  font-size: 1.8em;
+  line-height: 1.8em;
+  margin: 0.45em 0;
+}
+
+/* line 8, ../../prototypes/heading/_modifiers.scss */
+[class*='-heading--p3'] {
+  font-size: 1.65em;
+  line-height: 1.65em;
+  margin: 0.4125em 0;
+}
+
+/* line 8, ../../prototypes/heading/_modifiers.scss */
+[class*='-heading--p4'] {
+  font-size: 1.55em;
+  line-height: 1.55em;
+  margin: 0.3875em 0;
+}
+
+/* line 8, ../../prototypes/heading/_modifiers.scss */
+[class*='-heading--p5'] {
+  font-size: 1.4em;
+  line-height: 1.4em;
+  margin: 0.35em 0;
+}
+
+/* line 17, ../../prototypes/heading/_modifiers.scss */
+[class*='-heading--sub'] {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  margin: 0.175em 0;
+}
+
+/* line 521, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/prototype-css-1.0.0/sass/_prototype-css.scss */
+.debug [class*='-hero s_']:hover {
+  outline: 1px solid red;
+}
+/* line 527, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/prototype-css-1.0.0/sass/_prototype-css.scss */
+.debug [class*='-hero s_']::after {
+  content: "{ 'block' : 'hero', 'static' : true }";
+  display: none;
+}
+/* line 394, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/prototype-css-1.0.0/sass/_prototype-css.scss */
+.debug [class*='-hero s_']::after {
+  content: "{ 'block' : 'hero', 'static' : true }";
+  display: none;
+}
+
+/* line 521, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/prototype-css-1.0.0/sass/_prototype-css.scss */
+.debug [class*='-heading s_']:hover {
+  outline: 1px solid red;
+}
+/* line 527, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/prototype-css-1.0.0/sass/_prototype-css.scss */
+.debug [class*='-heading s_']::after {
+  content: "{ 'block' : 'heading', 'static' : true }";
+  display: none;
+}
+/* line 394, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/prototype-css-1.0.0/sass/_prototype-css.scss */
+.debug [class*='-heading s_']::after {
+  content: "{ 'block' : 'heading', 'static' : true }";
+  display: none;
+}
+
+/* line 5, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 24, ../../prototypes/config/library/mixins/_util.scss */
+html, body {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* line 30, ../../prototypes/config/library/mixins/_util.scss */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* line 36, ../../prototypes/config/library/mixins/_util.scss */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 5, ../../components/root/critical/_blocks.scss */
+.root {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* line 3, ../../components/site/critical/_blocks.scss */
+.site {
+  height: 100%;
+  overflow-x: hidden;
+}

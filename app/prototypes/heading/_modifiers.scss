@@ -1,0 +1,25 @@
+
+
+
+//heading size modifiers
+
+@each $name, $size in $heading-sizes {
+
+	%heading--#{$name}{
+
+		@include util-type( $size );
+		@include block;
+
+	}
+
+}
+
+%heading--sub{
+
+	@include util-type( .7em );
+	@include block;
+
+}
+
+
+

@@ -321,6 +321,14 @@ $static-class: "."+$static-block-class !global;
 
 }
 
+@mixin util-type( $size ){
+
+	font-size:   $size;
+	line-height: $size;
+	margin: ($size * .25) 0;
+
+}
+
 
 @mixin util-heading( $size: 3.5 ){
 

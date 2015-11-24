@@ -1,0 +1,26 @@
+
+
+.anim{
+  @include transition( none );
+  @include animation-duration( 1s );
+  @include animation-fill-mode( both );
+}
+
+.anim-pulse-scale{
+  
+  @include animation( _p-pulse-scale 1s both );
+  z-index: 9;
+  
+}
+
+.anim-pop-out{
+  
+  @include animation( _p-pop-out .5s linear both );
+  
+}
+
+.anim-spin{
+  
+  @include animation( _p-spin 1.5s linear infinite );
+  
+}  

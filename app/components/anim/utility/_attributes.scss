@@ -1,0 +1,19 @@
+
+
+[data-hover*="::pulse-scale"]:hover{
+  
+  @extend .anim-pulse-scale;
+  
+}
+
+[data-hover*="::pop-out"]:hover{
+  
+  @extend .anim-pop-out;
+  
+}
+
+[class*="--loading"] [data-loading*="::spin"]{
+  
+  @extend .anim-spin;
+  
+}
