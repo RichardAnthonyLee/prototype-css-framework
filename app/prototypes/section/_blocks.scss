@@ -1,0 +1,16 @@
+
+
+
+%section{    
+
+	@include util-clearfix;
+	display: block;
+	@include block;
+
+}
+
+.test{
+
+	section: true;
+
+}

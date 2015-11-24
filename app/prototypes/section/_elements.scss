@@ -1,0 +1,75 @@
+
+
+%section__header{
+
+	display: block;
+	@include util-clearfix;
+	@include block; 
+
+}
+
+
+%section__row{
+
+	@include util-clearfix;
+	@include block;  
+
+    @include min-screen( $screen-sm ){
+
+        margin-left: -20px;
+        margin-right: -20px;
+
+    }
+
+}
+
+
+%section__column{
+
+
+	display: block;
+	@include util-rem( margin, $spacing-md auto );
+
+    padding-left: 20px;
+    padding-right: 20px;
+
+
+	@include max-screen( $screen-sm ){
+
+		display: block;
+		text-align: center;
+		max-width: 90%;
+
+	}  
+
+
+	@include block; 
+
+
+}
+
+%section__heading{
+
+	@include util-heading( $heading-ml );
+	text-align: center;
+	@include util-rem( margin-bottom, $spacing-md );
+	@include block;
+
+}
+
+
+
+%section__inner{
+
+	@include util-container;
+	@include block;
+
+}
+
+
+%section__inner %section__inner{
+
+	padding-left: 0px;
+	padding-right: 0px;
+
+}

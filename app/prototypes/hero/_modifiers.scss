@@ -1,0 +1,20 @@
+
+
+
+%hero--p2{
+
+	height: auto;
+	@include block;
+
+} 
+
+%hero--p2 %hero__inner{
+
+	@include min-screen( $screen-sm ){
+
+		@include util-rem( padding-top, 10 );
+		@include util-rem( padding-bottom, 10 );
+
+	}
+
+}

@@ -1,0 +1,195 @@
+
+
+
+%action--active{
+
+  @extend %action:active;
+  @include block;
+
+}
+
+
+%action--min{
+
+   color: $color-primary;
+
+   @include util-rem( padding, $spacing-xs );
+   border-color: transparent;
+
+   &, &:hover, &:active{
+         border-color: transparent;
+         background-color: transparent;
+   }
+
+   //minimal action hides text, assuming it to be for accessibility
+
+   %action__text{
+
+      position: absolute;
+      left: -9999px;
+
+   }
+
+   %action__icon{
+
+      left: auto;
+
+   }
+
+   @include block;
+
+}
+
+%action--signal{
+
+   border-radius: 50%;
+   border: 1px solid rgba( #fff, .2 );
+   @include util-rem( width, 4.8 );
+   @include util-rem( height, 4.8 );
+   padding: 0px;
+   @include block;
+
+   %action__icon{
+
+       @include util-rem( line-height, 4.8 );
+       left: auto;
+
+   }
+
+   %action__text{
+
+      position: absolute;
+      left: -9999px;
+
+   }
+
+   &:hover,
+   &:active{
+       border-width: 1px;
+   }
+
+}
+
+
+%action--p1{
+
+    display: inline-block;
+
+    %action__icon{
+
+        @include util-text( $text-xl );
+
+    }
+
+    @include block;
+
+
+}
+
+
+%action--text{
+
+	background-color: transparent;
+	display: inline;
+	color: $color-primary;
+	padding: 0px;
+	border: none;
+
+   &, &:hover, &:active{
+
+      border: none;
+      background-color: transparent;
+
+   }  
+
+	&:hover, &:active{
+
+		background-color: transparent;
+		color: darken( $color-primary, 10% );
+
+	}
+
+	@include block;  
+
+}
+
+%action--child{
+
+    color: $color-primary-text;
+    @include block;
+
+}
+
+
+
+//Button Priority Styles
+
+//priority 1
+
+%action--p1{
+
+   @include util-rem( padding, $spacing-rect-lg );
+   @include util-rem( margin-bottom, $spacing-lg );
+
+   display: block;
+   @include util-font-size( $text-md );
+    
+   @include block;
+
+
+   @include min-screen( $screen-sm ){
+
+       @include util-font-size( $text-lg );
+
+   }
+
+
+   //assumes that the elements are stacked, if they are adjacent
+   //and removes margin from the last element
+
+   & + %action--p1:last-child{
+
+       margin-bottom: 0px;
+
+   }
+
+}
+
+
+//priority 4
+
+%action--p4{
+
+   @include util-rem( padding, $spacing-rect-sm );
+   @include util-rem( margin-bottom, $spacing-sm );
+
+   @include util-font-size( $text-sm );
+    
+   @include block;
+
+}
+
+//Button types
+
+%action--primary2{
+
+   @include util-button--variant( rgba( #fff, .7 ) #fff #fff, 
+                                  $color-primary,
+                                  $color-primary, 
+                                  3px solid );
+
+   @include block;
+
+
+}
+
+%action--secondary{
+   
+   @include util-button--variant( transparent $color-primary darken( $color-primary, 15% ), 
+                                  $color-primary-text,
+                                  rgba($color-primary-text, .7) $color-primary-text $color-primary-text, 
+                                  2px solid );
+
+   @include block;
+   
+}

@@ -1,0 +1,12 @@
+
+
+
+
+%action{
+
+   @include util-button( $primary-color );
+   @include single-transition( all, .3s, ease-in-out );
+   margin-bottom: 5px;
+   @include block;
+
+}

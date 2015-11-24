@@ -1,0 +1,109 @@
+
+
+//css-blocks config
+$static-block-class: 's_';
+$debug-mode: true;  
+
+//logo config
+$logo-image:  images_dir("logo.png");
+$logo-width:  321px;
+$logo-height: 96px;
+
+//screen sizes
+$screen-xl: 1350px;
+$screen-lg: 1210px;
+$screen-ml: 1130px;
+$screen-md: 980px;
+$screen-sm: 750px;
+$screen-xs: 519px;
+
+//container
+$container-width: 1200px;
+
+//z indexes
+$z-top: 99999;
+
+
+//brand colors 
+$primary-color: #00bff3;
+$color-primary: $primary-color;
+$color-primary-text: #fff; //the color of the text on primary colored components
+
+//panel colors
+$color-panel: #eee;
+$color-panel-text: #fff;
+
+//overlay colors
+$color-overlay: rgba(0, 0, 0, .15);
+$color-overlay-primary: rgba( $color-primary, .4 );
+
+//component colors
+$color-success: lighten( green, 10% );
+$color-footer:  #333;
+
+//3rd party brand colors
+$color-twitter: #4099FF;
+$color-linked-in: #007bb6;
+$color-facebook: #3b5998;
+$color-github: #333;
+
+//spacing settings
+$spacing-xxs: .5;
+$spacing-xs:  1.5;
+$spacing-sm:  1.8;
+$spacing-md:  2.5;
+$spacing-lg:  3.5;
+$spacing-xl:  4;
+$spacing-xxl: 5;
+
+//padding/margin shape sizes
+$spacing-rect-xxs:  util-rect-sizing( $spacing-xxs );
+$spacing-rect-xs:   util-rect-sizing( $spacing-xs );
+$spacing-rect-sm:   util-rect-sizing( $spacing-sm );
+$spacing-rect-md:   util-rect-sizing( $spacing-md );
+$spacing-rect-lg:   util-rect-sizing( $spacing-lg );
+$spacing-rect-xl:   util-rect-sizing( $spacing-xl );
+$spacing-rect-xxl:   util-rect-sizing( $spacing-xxl );
+
+//thumbnail sizes
+$thumbnail-height-sm: 15%; 
+$thumbnail-height-md: 30%;
+$thumbnail-height-lg: 40%;
+
+
+//typography settings
+$text-xs: .7;
+$text-sm: 1.2;
+$text-md: 1.6;
+$text-lg: 2;
+$text-xl: 3;
+
+$text-color-overlay: #fff;
+$text-color:  #000;
+$text-color2: #333;
+
+$heading-xxs:  $text-sm;
+$heading-xs:   $text-md;
+$heading-sm:   $text-lg;
+$heading-smd:  2.5;
+$heading-md:   $text-xl;
+$heading-ml:   3.7;
+$heading-lg:   4.5;
+$heading-xl:   5;
+
+$heading-color-overlay: $text-color-overlay;
+$heading-color:  $text-color;
+$heading-color2: $text-color2;
+
+
+//fonts
+$font-default: 'Open Sans', sans-serif;
+$font-lead:    'Lato', sans-serif;
+$font-lead2:   'Yanone Kaffeesatz', sans-serif;
+
+//font-weights
+$font-weight-default: normal;
+$font-weight-lead:    bold;
+$font-weight-lead2:   normal;
+
+

@@ -1,0 +1,463 @@
+
+$static-class: "."+$static-block-class !global; 
+
+
+
+@function util-rect-sizing( $size ){
+
+    @return ($size/2) ($size);
+
+}
+
+@function strip-unit($num) {
+
+  @return $num / ($num * 0 + 1);
+
+}
+
+
+@mixin util-reset(){
+
+	@include global-reset;
+
+
+	html, body{
+		height: 100%;
+		margin: 0px;
+		padding: 0px;
+	}
+
+	a{
+		color: inherit;
+		text-decoration: none;
+	}
+
+
+	*, *:before, *:after{
+
+		@include box-sizing(border-box);	
+
+	}
+
+}
+
+
+@mixin util-clearfix(){
+
+	&:before, &:after{
+		content: "";
+		display: table;
+	}
+
+	&:after{
+		clear: both;
+	}
+
+}
+
+//-----  Container 
+//
+//  a centered wrapper cleared for inner
+//  page content
+//
+//----------------------------------------
+
+@mixin util-container($max-width: 1200px){
+
+	margin: 0px auto;
+	max-width: $max-width;
+
+	@include util-rem( padding, $spacing-rect-md );
+	@include util-clearfix;
+
+}
+
+
+@mixin util-grid($span, $margin: 0, $last: false){
+
+	float: left;
+	width: span( join($span, inside) ) - ( $margin );
+	margin-right: $margin; 
+
+	@if( $last )
+	{
+
+        &:last-child
+        {
+
+            margin-right: 0px;
+
+        }
+
+	}
+
+}
+
+@mixin util-stack(){
+
+	float: none;
+	width: 100%;
+	margin: 0px auto;
+
+}
+
+@mixin util-col-full-height($height: 10000px){
+
+	padding-bottom: $height;
+	margin-bottom: -($height);
+
+}
+
+
+@mixin util-font-face($font, $file-name, $weight, $style: normal){
+
+	@include font-face($font, font-files( $file-name + '.svg', 
+										  $file-name + '.ttf', 
+										  $file-name + '.woff',
+										  $file-name + '.woff2' ), $file-name + '.eot', $weight, $style);
+
+}
+
+@mixin util-button($color){
+
+	color: #fff;
+	@include util-rem( padding, $spacing-rect-md );
+	border: 2px solid;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	white-space: nowrap;
+	text-decoration: none;
+	display: inline-block;
+
+	@include util-text( $text-md );
+
+	@include util-button--variant( $color );
+
+	@include single-transition(background-color, .3s, ease-in-out);
+
+
+}
+
+
+@mixin util-button--variant( $color, $text: #fff, $border: false, $border-style: 2px solid){
+
+
+    @if ( type-of($color) == "color" )
+    {
+        $color: ( $color, darken($color, 10%), darken($color, 15%) );
+    }
+
+    @if( type-of($text) == "color" )
+    {
+    	$text: ( $text, darken($text, 10%), darken($text, 15%) );
+    }
+
+    @if( $border == false )
+    {
+    	$border: $color; 
+    }
+
+    @if ( type-of($border) != "list" )
+    {
+       $border: ( $border, darken($border, 10%), darken($border, 15%) );
+    }
+
+    background-color: nth($color, 1);
+    border:           $border-style;
+    border-color:     nth($border, 1);
+    color:            nth($text, 1);
+    
+
+	&:hover{
+		background-color: nth($color, 2);
+		border:           $border-style nth($border, 2);  
+		color:            nth($text, 2);
+	}
+
+
+	&:active{
+		background-color: nth($color, 3);
+		border:           $border-style nth($border, 3); 
+		color:            nth($text, 3);
+	}	
+
+}
+
+
+@mixin util-button--outline($color){
+
+	@include util-button($color);
+	background-color: transparent;
+	color: darken( $color, 15% );
+	border: 1px solid $color;
+	border-radius: 5px;
+
+	@include single-transition(border, .3s, ease-in-out);
+
+	&:active{
+		border: 1px solid light($color, 15%);
+		background-color: transparent;
+	}
+
+	&:hover{
+		border: 1px solid lighten($color, 10%);
+		background-color: transparent;
+		color: darken( $color, 20% );
+	}
+}
+
+@mixin util-button--small{
+
+	font-size: 13px;
+	padding: 7px 20px;
+
+
+}
+
+
+@mixin util-overlay($color){
+
+	& *{
+		z-index: 1;
+	}
+
+	&:after{
+
+		content: "";
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+		top: 0px;
+		z-index: 0;
+		background-color: $color;
+		height: 100%;
+		width: 100%;
+		display: block;
+
+	}
+
+}
+
+@mixin util-image-wrapper($height: 25%){
+	
+	position: relative;
+	height: 0px;
+	padding-bottom: $height;
+	display: block;
+	overflow: hidden;
+
+}
+
+@mixin util-unwrap-image{
+
+	padding-bottom: 0px;
+	height: auto;
+
+}
+
+
+@mixin util-wrapped-image( $h: true ){
+	
+	position: absolute;
+	top: auto;
+	left: 0px;
+	right: 0px; 
+	bottom: 0px;
+	display: block;
+
+	@if ($h == true)
+	{
+
+		height: 100%;
+		width: auto;
+
+	}
+	@else
+	{
+
+		height: auto;
+		width:  100%;
+
+	}
+
+}
+
+@mixin util-unwrapped-image(){
+
+	position: static;
+	width: 100%;
+	height: auto;
+
+}
+
+
+@mixin util-bg-color( $background, $color ) {
+	color: $color;  
+	background: $background;
+}
+
+//text and font mixins
+
+
+@mixin util-font-size( $size ) {
+    
+	@include util-rem( font-size, $size );
+    $l-ht:  ( $size * 1.5 );
+    @include util-rem( line-height, $l-ht );
+}
+
+
+@mixin util-text( $size, $margin: false ){
+
+    @include util-font-size( $size );
+
+    @if ( $margin )
+    {
+    	$margin: ( $size * .5 ) auto;
+    	@include util-rem( margin, $margin );
+    }
+
+}
+
+
+@mixin util-heading( $size: 3.5 ){
+
+	@include util-text( $size, true );
+  
+  	color: $heading-color;
+	font-family: $font-lead;
+	font-weight: $font-weight-lead;
+	display: block;
+	@include util-clearfix;
+
+}
+
+
+@mixin util-heading2( $size: 3.5 ){
+
+	@include util-heading( $size );
+
+	color: $heading-color2;
+	font-family: $font-lead2;
+	font-weight: 300;
+
+}
+
+//https://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+
+@mixin util-rem($property, $values...) {
+
+	@if( type-of( nth( $values, 1 ) ) == 'list' )
+	{
+
+        @if( length( $values ) > 1 )
+        {
+        	@error "second argument $values for mixin util-rem must be a list of strings";
+        }
+
+		$values: nth( $values, 1 );
+
+	}
+
+
+    $max: length($values);
+    $pxValues: '';
+    $remValues: '';
+
+    @for $i from 1 through $max 
+    {
+
+    	$value: nth($values, $i);
+
+    	//if the value is not a string, multiply
+    	//it by 10 and append 'px' to it
+
+    	@if( type-of( $value ) != 'string' )
+    	{
+
+	        $value: strip-unit(nth($values, $i));
+	        $pxValues: #{$pxValues + $value*10}px;
+
+	    }
+
+	    //else add the value as is
+
+	    @else
+	    {
+
+            $pxValues: #{$pxValues + $value};
+
+	    }
+
+        @if $i < $max 
+        {
+
+            $pxValues: #{$pxValues + " "};
+
+        }	    
+
+    } 
+
+    @for $i from 1 through $max 
+    {
+    	$value: nth($values, $i);
+
+    	//if the value is not a string append 'rem' to it
+
+    	@if( type-of( $value ) != 'string' )
+    	{
+
+	        $value: strip-unit( $value );
+	        $remValues: #{$remValues + $value}rem;
+
+	    }
+
+	    //or just leave it as is
+
+	    @else
+	    {
+
+	    	$remValues: #{$remValues + $value};
+
+	    }
+
+        @if $i < $max 
+        {
+
+            $remValues: #{$remValues + " "};
+
+        }
+
+
+    } 
+  
+  #{$property}: $pxValues; 
+  #{$property}: $remValues; 
+
+}
+
+
+
+//media query mixins
+//used by .site element only
+//http://zerosixthree.se/detecting-media-queries-with-javascript/
+
+@mixin define-breakpoint( $name ) {
+
+    @if ( '#{&}' != '.site' )
+    {
+    	@error "cannot define breakpoint outside of .root";
+    }
+
+	&:after{
+        content: $name;
+        display: none;
+	}
+}
+
+
+
+
+
