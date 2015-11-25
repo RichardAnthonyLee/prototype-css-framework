@@ -25,6 +25,12 @@
         },
         {
             "name": "heading"
+        },
+        {
+            "name": "action"
+        },
+        {
+            "name": "prototype"
         }
     ],
     "build_dir": "app/build",

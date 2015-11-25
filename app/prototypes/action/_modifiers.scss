@@ -1,195 +1,148 @@
 
 
-
-%action--active{
-
-  @extend %action:active;
-  @include block;
-
-}
-
-
-%action--min{
-
-   color: $color-primary;
-
-   @include util-rem( padding, $spacing-xs );
-   border-color: transparent;
-
-   &, &:hover, &:active{
-         border-color: transparent;
-         background-color: transparent;
-   }
-
-   //minimal action hides text, assuming it to be for accessibility
-
-   %action__text{
-
-      position: absolute;
-      left: -9999px;
-
-   }
-
-   %action__icon{
-
-      left: auto;
-
-   }
-
-   @include block;
-
-}
-
 %action--signal{
+  @include _p-button-circle;
+  @include block;
+}
 
-   border-radius: 50%;
-   border: 1px solid rgba( #fff, .2 );
-   @include util-rem( width, 4.8 );
-   @include util-rem( height, 4.8 );
-   padding: 0px;
-   @include block;
+%action--labelled{
+  padding-left: 2.75em;
+  @include block;
+}
 
-   %action__icon{
+%action__label--action{
+  box-shadow: inset 0px -10px 50px rgba(0,0,0,.2);
+  @include block;
+}
 
-       @include util-rem( line-height, 4.8 );
-       left: auto;
+%action--extended{
+  
+  height: 3.7em;  
+  padding: 0px 1.5em;
+  @include block;  
+}
 
-   }
-
-   %action__text{
-
-      position: absolute;
-      left: -9999px;
-
-   }
-
-   &:hover,
-   &:active{
-       border-width: 1px;
-   }
-
+%action--revealer{
+  padding: 0px;
+  @include block;
 }
 
 
-%action--p1{
-
-    display: inline-block;
-
-    %action__icon{
-
-        @include util-text( $text-xl );
-
-    }
-
-    @include block;
-
-
+%action--loading{
+  visibility: visible;
+  @include block;
 }
 
-
-%action--text{
-
-	background-color: transparent;
-	display: inline;
-	color: $color-primary;
-	padding: 0px;
-	border: none;
-
-   &, &:hover, &:active{
-
-      border: none;
-      background-color: transparent;
-
-   }  
-
-	&:hover, &:active{
-
-		background-color: transparent;
-		color: darken( $color-primary, 10% );
-
-	}
-
-	@include block;  
-
-}
-
-%action--child{
-
-    color: $color-primary-text;
-    @include block;
-
+%action--loader{
+  display: inline-block;
+  overflow: visible;
+  @include block;
 }
 
 
 
-//Button Priority Styles
+%action--signal %action__text{
+  position: absolute;
+  left: -1000px;
+  margin: 0px;
+}
 
-//priority 1
+%action--signal %action__icon{
+  margin: 0px auto;
+}
 
-%action--p1{
+%action--extended%action--labelled{
+  
+  padding-left: 4.5em;
+  
+}
 
-   @include util-rem( padding, $spacing-rect-lg );
-   @include util-rem( margin-bottom, $spacing-lg );
+%action--extended %action__label{
+  
+  width: 3.5em;
+  
+}
 
-   display: block;
-   @include util-font-size( $text-md );
-    
-   @include block;
+%action--extended %action__label %action__icon{
+  
+  line-height: 3.7em;
+  font-size: 1.5em;
+  position: relative;
+  top: -.75em;
+  
+}
 
+%action--extended %action__text{
+  
+  text-align: left;
+  
+}
 
-   @include min-screen( $screen-sm ){
+%action--extended %action__body,
+%action--extended %action__section{
+  
+  padding: .5em 0px;
+  
+}
 
-       @include util-font-size( $text-lg );
+%action--revealer %action__body{
+  
+  padding: 0px;
+  
+}
 
-   }
+%action--revealer %action__section{
+  
+  padding-left: 1em;
+  padding-right: 1em;
+  
+}
 
+%action--revealer%action--labelled %action__section{
+  
+  padding-left: 2.75em;
+  
+}
 
-   //assumes that the elements are stacked, if they are adjacent
-   //and removes margin from the last element
+%action--revealer%action--extended %action__section{
+  
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  
+}
 
-   & + %action--p1:last-child{
-
-       margin-bottom: 0px;
-
-   }
-
+%action--revealer:hover %action__section{
+  
+  @include transform( translateY( -2.25em ) );
+  
 }
 
 
-//priority 4
-
-%action--p4{
-
-   @include util-rem( padding, $spacing-rect-sm );
-   @include util-rem( margin-bottom, $spacing-sm );
-
-   @include util-font-size( $text-sm );
-    
-   @include block;
-
+%action--extended%action--revealer:hover %action__section{
+  
+  @include transform( translateY( -3.7em ) );
+  
 }
 
-//Button types
-
-%action--primary2{
-
-   @include util-button--variant( rgba( #fff, .7 ) #fff #fff, 
-                                  $color-primary,
-                                  $color-primary, 
-                                  3px solid );
-
-   @include block;
 
 
+%action--loader %loader{
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 0px;
+  width: 100%;
 }
 
-%action--secondary{
-   
-   @include util-button--variant( transparent $color-primary darken( $color-primary, 15% ), 
-                                  $color-primary-text,
-                                  rgba($color-primary-text, .7) $color-primary-text $color-primary-text, 
-                                  2px solid );
+%action--loading %loader{
+  display: block;
+}
 
-   @include block;
-   
+%action--extended%action--labelled%action--revealer{
+  padding-left: 3.5em;
+}
+
+%action--extended%action--labelled%action--revealer %action__section{
+  margin-left: -3.5em;
+  padding-left: 4.5em;
 }

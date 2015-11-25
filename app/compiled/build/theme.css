@@ -1,3 +1,51 @@
+/**
+
+.action:hover [data-hover*="action__icon:pulse-scale"]{
+  
+    @extend .anim-pulse-scale;
+  
+}
+
+
+[class*="--loading"] [data-loading*="::out"]{
+  display: none;
+}
+
+[class*="--loader"]{
+  display: none;
+}
+
+
+
+[class*="--disabled"]{
+  opacity: .7;
+  &, &:hover, &:active{
+    box-shadow: none;
+    @include animation-name( _ );
+    cursor: default;
+  }
+}
+
+
+[class*="--loading"] [class*="--loader"]{
+  display: inline-block;
+}
+
+.loader{
+  height: .3em;
+  overflow: hidden;
+  background-color: #ccc;
+  border-radius: .01em;
+  display: block;
+}
+
+.loader__progress{
+  height: 100%;
+  width: 0px;
+  background-color: lighten( map-get( $action-colors, primary ), 14% );
+  display: block;
+}
+*/
 @-moz-keyframes _p-spin {
   0% {
     -moz-transform: rotate(0deg);

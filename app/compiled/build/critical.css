@@ -39,6 +39,98 @@
   clear: both;
 }
 
+/* line 3, ../../prototypes/action/_blocks.scss */
+[class*='-action s_'] {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+  height: 2.25em;
+  line-height: 2em;
+  padding: 0px 1em;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 0.5em;
+  margin-right: 0.25em;
+  overflow: hidden;
+  vertical-align: middle;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border: 0.05em solid #4343ff;
+  background: #5C5CFF;
+  color: #fff;
+  border-radius: 0.05em;
+  font-size: 22px;
+}
+/* line 64, ../../prototypes/action/library/_mixins.scss */
+[class*='-action s_']:not(.action--disabled):hover {
+  border: 0.05em solid #7070ff;
+  background: #7070ff;
+  color: #fff;
+}
+/* line 72, ../../prototypes/action/library/_mixins.scss */
+[class*='-action s_']:not(.action--disabled):active {
+  border: 0.05em solid #4343ff;
+  background: #4343ff;
+  color: #fff;
+  -moz-transition: background-color 0s ease-in-out;
+  -o-transition: background-color 0s ease-in-out;
+  -webkit-transition: background-color 0s ease-in-out;
+  transition: background-color 0s ease-in-out;
+}
+
+/**
+
+.action:hover [data-hover*="action__icon:pulse-scale"]{
+  
+    @extend .anim-pulse-scale;
+  
+}
+
+
+[class*="--loading"] [data-loading*="::out"]{
+  display: none;
+}
+
+[class*="--loader"]{
+  display: none;
+}
+
+
+
+[class*="--disabled"]{
+  opacity: .7;
+  &, &:hover, &:active{
+    box-shadow: none;
+    @include animation-name( _ );
+    cursor: default;
+  }
+}
+
+
+[class*="--loading"] [class*="--loader"]{
+  display: inline-block;
+}
+
+.loader{
+  height: .3em;
+  overflow: hidden;
+  background-color: #ccc;
+  border-radius: .01em;
+  display: block;
+}
+
+.loader__progress{
+  height: 100%;
+  width: 0px;
+  background-color: lighten( map-get( $action-colors, primary ), 14% );
+  display: block;
+}
+*/
 /* line 3, ../../prototypes/hero/_elements.scss */
 [class*='-hero__inner s_'] {
   height: inherit;
@@ -82,26 +174,26 @@
   }
 }
 
-/* line 40, ../../prototypes/hero/_elements.scss */
+/* line 41, ../../prototypes/hero/_elements.scss */
 [class*='-hero__content s_'] {
   display: block;
   width: 100%;
   color: inherit;
 }
 @media only screen and (min-width: 750px) {
-  /* line 40, ../../prototypes/hero/_elements.scss */
+  /* line 41, ../../prototypes/hero/_elements.scss */
   [class*='-hero__content s_'] {
     display: table-cell;
     vertical-align: middle;
   }
 }
 
-/* line 57, ../../prototypes/hero/_elements.scss */
+/* line 59, ../../prototypes/hero/_elements.scss */
 [class*='-hero__heading s_'] {
   text-align: center;
 }
 
-/* line 65, ../../prototypes/hero/_elements.scss */
+/* line 67, ../../prototypes/hero/_elements.scss */
 [class*='-hero__footer s_'] {
   position: absolute;
   bottom: 0px;
@@ -110,13 +202,13 @@
   z-index: 1;
 }
 @media only screen and (max-width: 750px) {
-  /* line 65, ../../prototypes/hero/_elements.scss */
+  /* line 67, ../../prototypes/hero/_elements.scss */
   [class*='-hero__footer s_'] {
     display: none;
   }
 }
 
-/* line 85, ../../prototypes/hero/_elements.scss */
+/* line 87, ../../prototypes/hero/_elements.scss */
 [class*='-hero__skip s_'] {
   position: absolute;
   bottom: 10px;
@@ -124,10 +216,49 @@
   margin-left: -24px;
 }
 @media only screen and (min-width: 1130px) {
-  /* line 85, ../../prototypes/hero/_elements.scss */
+  /* line 87, ../../prototypes/hero/_elements.scss */
   [class*='-hero__skip s_'] {
     bottom: 40px;
   }
+}
+
+/* line 3, ../../prototypes/action/_elements.scss */
+[class*='-action__text s_'] {
+  font-size: .9em;
+}
+
+/* line 8, ../../prototypes/action/_elements.scss */
+[class*='-action__icon s_'] {
+  display: inline-block;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+/* line 14, ../../prototypes/action/_elements.scss */
+[class*='-action__icon s_'] + [class*='-action__text s_'],
+[class*='-action__text s_'] + [class*='-action__icon s_'] {
+  margin-left: .3em;
+}
+
+/* line 19, ../../prototypes/action/_elements.scss */
+[class*='-action__label s_'] {
+  height: 100%;
+  width: 2em;
+  position: absolute;
+  left: 0px;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+/* line 28, ../../prototypes/action/_elements.scss */
+[class*='-action__section s_'] {
+  height: 103%;
+  display: block;
+  position: relative;
 }
 
 /* line 4, ../../prototypes/hero/_modifiers.scss */
@@ -187,6 +318,131 @@
   margin: 0.175em 0;
 }
 
+/* line 3, ../../prototypes/action/_modifiers.scss */
+[class*='-action--signal'] {
+  height: 2.3em;
+  width: 2.3em;
+  line-height: 2.3em;
+  border-radius: 50%;
+  padding: 0px;
+}
+
+/* line 8, ../../prototypes/action/_modifiers.scss */
+[class*='-action--labelled'] {
+  padding-left: 2.75em;
+}
+
+/* line 13, ../../prototypes/action/_modifiers.scss */
+[class*='-action__label--action'] {
+  box-shadow: inset 0px -10px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* line 18, ../../prototypes/action/_modifiers.scss */
+[class*='-action--extended'] {
+  height: 3.7em;
+  padding: 0px 1.5em;
+}
+
+/* line 25, ../../prototypes/action/_modifiers.scss */
+[class*='-action--revealer'] {
+  padding: 0px;
+}
+
+/* line 31, ../../prototypes/action/_modifiers.scss */
+[class*='-action--loading'] {
+  visibility: visible;
+}
+
+/* line 36, ../../prototypes/action/_modifiers.scss */
+[class*='-action--loader'] {
+  display: inline-block;
+  overflow: visible;
+}
+
+/* line 44, ../../prototypes/action/_modifiers.scss */
+[class*='-action--signal'] [class*='-action__text s_'] {
+  position: absolute;
+  left: -1000px;
+  margin: 0px;
+}
+
+/* line 50, ../../prototypes/action/_modifiers.scss */
+[class*='-action--signal'] [class*='-action__icon s_'] {
+  margin: 0px auto;
+}
+
+/* line 54, ../../prototypes/action/_modifiers.scss */
+[class*='-action--labelled'][class*='-action--extended'] {
+  padding-left: 4.5em;
+}
+
+/* line 60, ../../prototypes/action/_modifiers.scss */
+[class*='-action--extended'] [class*='-action__label s_'] {
+  width: 3.5em;
+}
+
+/* line 66, ../../prototypes/action/_modifiers.scss */
+[class*='-action--extended'] [class*='-action__label s_'] [class*='-action__icon s_'] {
+  line-height: 3.7em;
+  font-size: 1.5em;
+  position: relative;
+  top: -.75em;
+}
+
+/* line 75, ../../prototypes/action/_modifiers.scss */
+[class*='-action--extended'] [class*='-action__text s_'] {
+  text-align: left;
+}
+
+/* line 81, ../../prototypes/action/_modifiers.scss */
+[class*='-action--extended'] [class*='-action__section s_'] {
+  padding: .5em 0px;
+}
+
+/* line 94, ../../prototypes/action/_modifiers.scss */
+[class*='-action--revealer'] [class*='-action__section s_'] {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+/* line 101, ../../prototypes/action/_modifiers.scss */
+[class*='-action--labelled'][class*='-action--revealer'] [class*='-action__section s_'] {
+  padding-left: 2.75em;
+}
+
+/* line 107, ../../prototypes/action/_modifiers.scss */
+[class*='-action--extended'][class*='-action--revealer'] [class*='-action__section s_'] {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+/* line 114, ../../prototypes/action/_modifiers.scss */
+[class*='-action--revealer']:hover [class*='-action__section s_'] {
+  -moz-transform: translateY(-2.25em);
+  -ms-transform: translateY(-2.25em);
+  -webkit-transform: translateY(-2.25em);
+  transform: translateY(-2.25em);
+}
+
+/* line 121, ../../prototypes/action/_modifiers.scss */
+[class*='-action--extended'][class*='-action--revealer']:hover [class*='-action__section s_'] {
+  -moz-transform: translateY(-3.7em);
+  -ms-transform: translateY(-3.7em);
+  -webkit-transform: translateY(-3.7em);
+  transform: translateY(-3.7em);
+}
+
+/* line 141, ../../prototypes/action/_modifiers.scss */
+[class*='-action--labelled'][class*='-action--extended'][class*='-action--revealer'] {
+  padding-left: 3.5em;
+}
+
+/* line 145, ../../prototypes/action/_modifiers.scss */
+[class*='-action--labelled'][class*='-action--extended'][class*='-action--revealer'] [class*='-action__section s_'] {
+  margin-left: -3.5em;
+  padding-left: 4.5em;
+}
+
 /* line 521, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/prototype-css-1.0.0/sass/_prototype-css.scss */
 .debug [class*='-hero s_']:hover {
   outline: 1px solid red;
@@ -214,6 +470,21 @@
 /* line 394, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/prototype-css-1.0.0/sass/_prototype-css.scss */
 .debug [class*='-heading s_']::after {
   content: "{ 'block' : 'heading', 'static' : true }";
+  display: none;
+}
+
+/* line 521, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/prototype-css-1.0.0/sass/_prototype-css.scss */
+.debug [class*='-action s_']:hover {
+  outline: 1px solid red;
+}
+/* line 527, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/prototype-css-1.0.0/sass/_prototype-css.scss */
+.debug [class*='-action s_']::after {
+  content: "{ 'block' : 'action', 'static' : true }";
+  display: none;
+}
+/* line 394, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/prototype-css-1.0.0/sass/_prototype-css.scss */
+.debug [class*='-action s_']::after {
+  content: "{ 'block' : 'action', 'static' : true }";
   display: none;
 }
 
