@@ -67,7 +67,7 @@ $static-class: "."+$static-block-class !global;
 	margin: 0px auto;
 	max-width: $max-width;
 
-	@include util-rem( padding, $spacing-rect-md );
+	@include util-rem( padding, map-get( $layout-rect-rem-spacing, md ) );
 	@include util-clearfix;
 
 }
@@ -115,103 +115,6 @@ $static-class: "."+$static-block-class !global;
 										  $file-name + '.ttf', 
 										  $file-name + '.woff',
 										  $file-name + '.woff2' ), $file-name + '.eot', $weight, $style);
-
-}
-
-@mixin util-button($color){
-
-	color: #fff;
-	@include util-rem( padding, $spacing-rect-md );
-	border: 2px solid;
-	outline: none;
-	cursor: pointer;
-	text-align: center;
-	white-space: nowrap;
-	text-decoration: none;
-	display: inline-block;
-
-	@include util-text( $text-md );
-
-	@include util-button--variant( $color );
-
-	@include single-transition(background-color, .3s, ease-in-out);
-
-
-}
-
-
-@mixin util-button--variant( $color, $text: #fff, $border: false, $border-style: 2px solid){
-
-
-    @if ( type-of($color) == "color" )
-    {
-        $color: ( $color, darken($color, 10%), darken($color, 15%) );
-    }
-
-    @if( type-of($text) == "color" )
-    {
-    	$text: ( $text, darken($text, 10%), darken($text, 15%) );
-    }
-
-    @if( $border == false )
-    {
-    	$border: $color; 
-    }
-
-    @if ( type-of($border) != "list" )
-    {
-       $border: ( $border, darken($border, 10%), darken($border, 15%) );
-    }
-
-    background-color: nth($color, 1);
-    border:           $border-style;
-    border-color:     nth($border, 1);
-    color:            nth($text, 1);
-    
-
-	&:hover{
-		background-color: nth($color, 2);
-		border:           $border-style nth($border, 2);  
-		color:            nth($text, 2);
-	}
-
-
-	&:active{
-		background-color: nth($color, 3);
-		border:           $border-style nth($border, 3); 
-		color:            nth($text, 3);
-	}	
-
-}
-
-
-@mixin util-button--outline($color){
-
-	@include util-button($color);
-	background-color: transparent;
-	color: darken( $color, 15% );
-	border: 1px solid $color;
-	border-radius: 5px;
-
-	@include single-transition(border, .3s, ease-in-out);
-
-	&:active{
-		border: 1px solid light($color, 15%);
-		background-color: transparent;
-	}
-
-	&:hover{
-		border: 1px solid lighten($color, 10%);
-		background-color: transparent;
-		color: darken( $color, 20% );
-	}
-}
-
-@mixin util-button--small{
-
-	font-size: 13px;
-	padding: 7px 20px;
-
 
 }
 

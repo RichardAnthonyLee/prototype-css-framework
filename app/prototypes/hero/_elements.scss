@@ -6,7 +6,7 @@
 	width: 100%;
 	position: relative;
 	z-index: 1;
-	@include util-container( $container-width );
+	@include util-container( map-get( $layout-container-sizes, lg ) );
 
 	@include block;
 
@@ -19,7 +19,7 @@
 	padding: 100px 0px;
 	height: inherit;
 
-	@include min-screen( $screen-sm ){
+	@include min-screen( map-get( $screen-sizes, sm ) ){
 
 		padding: 0px;
 		display: table;
@@ -44,7 +44,7 @@
 	width: 100%;
 	color: inherit;
 
-	@include min-screen( $screen-sm ){
+	@include min-screen( map-get( $screen-sizes, sm ) ){
 
 		display: table-cell;
 		vertical-align: middle;
@@ -72,7 +72,7 @@
 	display: block;
 	z-index: 1;
 
-	@include max-screen( $screen-sm ){
+	@include max-screen( map-get( $screen-sizes, sm ) ){
 
 		display: none;
 
@@ -92,7 +92,7 @@
     margin-left: -24px;
     @include block;
 
-    @include min-screen( $screen-ml ){
+    @include min-screen( map-get( $screen-sizes, ml ) ){
 
     	bottom: 40px;
 

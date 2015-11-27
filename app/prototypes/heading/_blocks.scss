@@ -2,9 +2,9 @@
 
 %heading{
 
-  	color: $heading-color;
-	font-family: $font-lead;
-	font-weight: $font-weight-lead;
+  	color: map-get( $heading-colors, default );
+	font-family: map-get( $font-styles, lead );
+	font-weight: map-get( $font-weights, lead );
 	display: block;
 	@include util-clearfix;
 	@include block;

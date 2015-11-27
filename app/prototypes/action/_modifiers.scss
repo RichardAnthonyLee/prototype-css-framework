@@ -146,3 +146,26 @@
   margin-left: -3.5em;
   padding-left: 4.5em;
 }
+
+//base button default
+%action--child{
+    @include _p-button-basic( #fff );
+    @include block;
+}
+
+//action color variants
+@each $name, $color in $action-colors{
+
+    %action--#{$name}{
+        @include _p-button-standard( $color, #fff );
+        @include block;
+    }
+
+    %action--#{$name}%action--child{
+        @include _p-button-basic( $color );
+    }
+
+
+
+
+}

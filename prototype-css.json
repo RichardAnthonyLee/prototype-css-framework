@@ -8,7 +8,10 @@
         },
         {
             "name": "anim"
-        }
+        },
+        {
+            "name": "config"
+        }        
     ],
     "prototypes": [
         {
@@ -31,6 +34,9 @@
         },
         {
             "name": "prototype"
+        },
+        {
+            "name": "attribution"
         }
     ],
     "build_dir": "app/build",

@@ -10,9 +10,8 @@
 	background-repeat: no-repeat;
 	overflow: hidden;  
 	position: relative;
-	color: $color-primary-text;
 
-	@include min-screen( $screen-sm ){
+	@include min-screen( map-get( $screen-sizes, sm ) ){
 
 		height: 100%;
 
