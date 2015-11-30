@@ -1,5 +1,6 @@
 
 
+
 %action--signal{
   @include _p-button-circle;
   @include block;
@@ -130,7 +131,7 @@
   display: none;
   position: absolute;
   bottom: 100%;
-  left: 0px;
+  left: 0px; 
   width: 100%;
 }
 
@@ -153,6 +154,14 @@
     @include block;
 }
 
+//minimal action plain-text link
+%action--min{
+
+  @include _p-button-text( #fff );
+  @include block;  
+
+}
+
 //action color variants
 @each $name, $color in $action-colors{
 
@@ -165,7 +174,21 @@
         @include _p-button-basic( $color );
     }
 
-
-
+    %action--#{$name}%action--min{
+        @include _p-button-text( $color );
+    }    
 
 }
+
+//minimal action plain-text link
+%action--min{
+
+  &, &:hover, &:active{
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+}
+
+

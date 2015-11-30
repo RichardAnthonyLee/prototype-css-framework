@@ -19,7 +19,7 @@
   overflow:      hidden;
   vertical-align: middle;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); 
-  border-radius: .05em;
+  border-radius: .15em;
 
   &:not([class*="--disabled"]):active,
   [class*="--active"]{
@@ -67,7 +67,7 @@
 
 @mixin _p-button-basic( $color ){
 
-  @include _p-button-style( $color, .05em solid $color, transparent );
+  @include _p-button-style( $color, .1em solid $color, transparent );
   box-shadow: none;
   
   //only apply hover styles when button is not disabled
@@ -75,7 +75,7 @@
   &:not([class*="--disabled"]):hover{
     
     @include _p-button-style( $color,
-                              .05em solid lighten($color,4%),
+                              .1em solid lighten($color,4%),
                               transparent );
    
   }
@@ -84,7 +84,7 @@
   [class*="--active"]{
     
     @include _p-button-style( $color,
-                              .05em solid lighten($color,5%),
+                              .1em solid lighten($color,5%),
                               transparent );
     
     
@@ -93,17 +93,40 @@
 
 }
 
+@mixin _p-button-text( $color ){
+
+  @include _p-button-style( $color, .1em solid transparent, transparent );
+  box-shadow: none;
+  margin: 0px;
+
+  //only apply hover styles when button is not disabled
+  
+  &:not([class*="--disabled"]):hover{
+    
+    @include _p-button-style( darken( $color, 5% ), .1em solid transparent, transparent );
+   
+  }
+  
+  &:not([class*="--active"]):active,
+  [class*="--active"]{
+    
+    @include _p-button-style( darken( $color, 5% ), .1em solid transparent, transparent );
+    
+  }  
+
+}
+
 
 @mixin _p-button-standard( $color, $text ){
 
-  @include _p-button-style( $text, .05em solid darken($color, 5%), $color );
+  @include _p-button-style( $text, .09em solid darken($color, 5%), $color );
   
   //only apply hover styles when button is not disabled
   
   &:not([class*="--disabled"]):hover{
     
     @include _p-button-style( $text, 
-                              .05em solid lighten($color,4%),
+                              .09em solid lighten($color,4%),
                               lighten($color,4%) );
    
   }
@@ -112,7 +135,7 @@
   [class*="--active"]{
     
     @include _p-button-style( $text, 
-                              .05em solid darken($color,5%),
+                              .09em solid darken($color,5%),
                               darken($color,5%) );  
     
     

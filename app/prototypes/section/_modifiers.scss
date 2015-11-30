@@ -1,0 +1,13 @@
+
+
+@each $modifier, $color in $section-colors{
+
+	%section--#{$modifier}{
+
+		background-color: $color;
+		color: #fff;
+		@include block;
+
+	}
+
+}

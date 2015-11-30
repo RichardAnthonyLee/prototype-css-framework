@@ -1,0 +1,18 @@
+
+
+@mixin _p-form-control-basic( $color ){
+
+	background: transparent;
+	border: .1em solid $color;
+	color: $color;
+	
+	@include input-placeholder{
+		color: $color;
+	}
+
+	&:focus, &:checked{
+		border: .1em solid darken( $color, 5% );
+		color: $color;
+	}
+
+}

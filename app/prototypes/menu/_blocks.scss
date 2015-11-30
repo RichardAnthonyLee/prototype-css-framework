@@ -1,0 +1,15 @@
+
+
+
+
+%menu{
+
+	display: block;
+	padding: 0px;
+	margin: 0px auto;
+	text-align: center;
+	@include util-clearfix;
+	@include block;
+
+}
+

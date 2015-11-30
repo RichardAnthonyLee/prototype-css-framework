@@ -1,0 +1,79 @@
+
+
+
+
+%form__row{
+
+	display: block;
+	@include util-clearfix;
+	@include block;
+
+}
+
+
+%form__control{  
+
+
+	padding: .5em;
+	@include util-type( map-get( $text-sizes, p4 ) );  
+	width: 100%;
+	background-color: #ddd;
+	color: #111;
+	box-shadow: none;
+	border: 1px solid #ccc;
+	outline: none;
+	display: inline-block;
+	border-radius: none;
+	@include single-transition(all, .3s, ease-in-out);
+
+
+	@include input-placeholder{
+
+		color: #111;
+
+	}
+
+
+	&:focus{
+
+		background-color: #ccc; 
+		border-color: #bbb;
+
+	}
+
+	@include appearance( none );
+	@include block;
+
+}
+
+
+%form__label{
+    
+    cursor: pointer;
+    @include block;
+    
+}
+
+%form__heading{
+
+    text-align: center;
+    @include block;
+
+}
+
+
+%form__control-group{
+
+    display: block;
+    @include util-clearfix;
+    @include block;
+
+}
+
+
+%form__action{
+
+	@include appearance( none );
+	@include block;
+
+}

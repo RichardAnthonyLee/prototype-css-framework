@@ -1,0 +1,206 @@
+
+
+
+%form--min{
+
+	margin: 0px;
+	@include block;
+
+}
+
+
+
+%form__control--checkbox{
+
+	&:checked{
+
+		background-color: #aaa; 
+
+	}
+
+}
+
+
+
+%form__control--child{
+
+
+	&, &:focus{
+		background-color: transparent;
+		border: none;
+		border-bottom: 1px solid #ccc;
+	}
+
+	&:focus{
+		border-bottom: 1px solid #333;
+	}
+
+	@include block;
+
+}
+
+
+@each $modifier, $color in $form-control-colors{
+   
+
+    %form__control--#{$modifier}{
+
+        border-color: darken( $color, 5% );
+        background-color: $color;
+        color: #fff;
+
+        &:focus{
+        	color: #fff;
+        	background-color: darken( $color, 5% );
+        }
+
+        @include input-placeholder{
+        	color: #fff;
+        }
+
+        @include block;
+    }
+
+
+	%form__control--child%form__control--#{$modifier}{
+
+		@include _p-form-control-basic( $color );
+
+	}
+
+
+}
+
+
+%form__control--child{
+
+	border: 1em solid;
+	border-color: inherit;
+	color: inherit;
+	background: transparent;
+
+	@include input-placeholder{
+
+		color: inherit
+
+	}
+
+	&:focus, &:checked{
+
+	    border-color: inherit;
+	    color: inherit;
+	    background: transparent;
+
+	}
+
+	@include block;
+
+}
+
+
+
+
+%form__control--box{
+
+	min-height: 150px;
+
+    @include min-screen( map-get( $screen-sizes, sm ) ){
+
+        min-height: 200px;
+
+    }
+   
+
+	@include block;
+
+}
+
+
+%form__control-group--labelled{
+
+	position: relative;
+	overflow: hidden;
+
+    %form__control{
+
+        width: 100%;
+        padding-right: 3em;
+
+    }
+
+    %form__label{
+
+        position: absolute;
+        right: auto;
+        left: .4em;
+    	top: .5em;
+        bottom: auto;
+        font-size: .9em;
+
+    }
+
+    %form__control + %form__label{
+
+    	right: .4em;
+    	left: auto;
+
+    }
+
+    %form__label + %form__control{
+
+
+    	padding: .55em .5em;
+    	padding-left: 3em;
+
+    }
+
+    @include block;
+
+}
+
+%form__control--checkbox{
+
+	height: 25px;
+	width: 25px;
+	padding: 0px;
+	outline: none;
+	position: relative;
+	z-index: 9;
+	margin-bottom: 0px;
+
+	&:checked{
+
+		&:before{
+
+			display: block;
+
+		}
+
+	}
+
+	&:before{
+
+	    content: "\2713 ";
+	    position: absolute;
+	    top: -7px;
+	    left: 1px;
+	    color: #fff;
+	    text-shadow: 1px 1px 1px #000;
+	    z-index: 9999;
+	    font-size: 25px;
+	    display: none;
+
+	}
+
+	//@include appearance( none );
+	@include block;	
+
+}
+
+
+%form__control--checkbox + %form__label{
+
+    top: -6px;
+    position: relative;
+
+}

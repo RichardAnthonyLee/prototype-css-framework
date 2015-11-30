@@ -1,0 +1,19 @@
+
+
+%brand{
+
+	display: block;
+	margin: .5em auto;
+	@include util-clearfix;
+	max-width: map-get( $logo, width );
+	overflow: hidden;
+
+	@include min-screen( map-get( $screen-sizes, sm ) ){
+
+		display: inline-block;
+
+	}
+
+	@include block;
+
+}

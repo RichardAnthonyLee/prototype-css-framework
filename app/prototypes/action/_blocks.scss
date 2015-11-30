@@ -6,7 +6,7 @@
   font-weight: 300;    
   @include _p-button;
   @include _p-button-standard( $color, #fff );
-  font-size: 22px;
+  font-size: 1.3em;
   @include block;
 }
 
