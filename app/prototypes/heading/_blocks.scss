@@ -2,7 +2,6 @@
 
 %heading{
 
-  	color: map-get( $heading-colors, default );
 	font-family: map-get( $font-styles, lead );
 	font-weight: map-get( $font-weights, lead );
 	display: block;

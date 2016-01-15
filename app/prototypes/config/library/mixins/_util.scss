@@ -66,6 +66,8 @@ $static-class: "."+$static-block-class !global;
 
 	margin: 0px auto;
 	max-width: $max-width;
+	z-index: 1;  
+	position: relative;
 
 	@include util-rem( padding, map-get( $layout-rect-rem-spacing, md ) );
 	@include util-clearfix;
@@ -120,10 +122,6 @@ $static-class: "."+$static-block-class !global;
 
 
 @mixin util-overlay($color){
-
-	& *{
-		z-index: 1;
-	}
 
 	&:after{
 
@@ -229,6 +227,7 @@ $static-class: "."+$static-block-class !global;
 	font-size:   $size;
 	line-height: $size;
 	margin: ($size * .25) 0;
+	margin-top: 0;
 
 }
 

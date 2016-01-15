@@ -1,0 +1,29 @@
+
+
+
+%block__heading{
+
+	display: block;
+	@include util-clearfix;
+	@include block;
+
+}
+
+
+%block__body,
+%block__header{
+
+	display: block;
+	@include util-rem( margin-bottom, map-get( $layout-rem-spacing, md ) );
+	@include util-clearfix;
+
+	@include block;
+
+}
+
+%block__footer{
+
+	display: block;
+	@include block;
+
+}

@@ -1,0 +1,11 @@
+
+
+%data{
+    display: inline-block;
+    @include util-type( map-get( $text-sizes, p5 ) );
+	@include block;  
+}  
+
+%data ~ %data{
+    margin-right: map-get( $layout-rem-spacing, sm );
+}

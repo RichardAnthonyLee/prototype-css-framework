@@ -1,0 +1,14 @@
+
+
+%control-group--radio{
+	margin: 0px auto;
+	text-align: center;
+	@include block;
+}
+
+
+%control-group--radio %control-group__item{
+	display: inline-block;
+	margin: 0px;
+	margin-left: -4px;
+}

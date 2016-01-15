@@ -1,0 +1,30 @@
+
+
+
+
+%list--scroller{
+
+	overflow-y: auto;
+	display: block;
+	max-height: 150px;
+	@include block;
+	
+}
+
+
+@each $color, $code in $colors{
+
+	%list--#{$color}{
+
+		@include block;
+
+		%list__item::after{
+
+			border-bottom-color: rgba( $code, .15 );
+
+		}
+
+	}	
+		
+}
+

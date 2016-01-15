@@ -1,0 +1,12 @@
+
+
+%slider__control--prev{
+	left: 0;  
+	@include block;
+}
+
+%slider__control--next{
+	left: auto;
+	right: 0;
+	@include block;
+}

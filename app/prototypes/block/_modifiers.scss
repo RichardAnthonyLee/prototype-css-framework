@@ -1,0 +1,44 @@
+
+
+
+%block--child{
+
+	color: inherit;
+	background-color: transparent;
+
+	%block__heading, 
+	%block__body, 
+	%block__footer{
+		color: inherit;
+	}
+
+
+	@include block;  
+
+}
+
+%block--focal{
+
+	padding: 20% 0px;
+	@include block;
+
+}
+
+
+
+%block--secondary{
+
+	display: block;
+	@include block;
+
+	%block__header, %block__body{
+
+		@include min-screen( map-get( $screen-sizes, sm ) ){
+
+			@include util-grid( 1 of 2 );
+
+		}
+
+	}
+
+}

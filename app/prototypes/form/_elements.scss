@@ -50,6 +50,9 @@
 %form__label{
     
     cursor: pointer;
+    padding: .81em .55em;
+    font-size: .8em;   
+
     @include block;
     
 }

@@ -162,21 +162,32 @@
 
 }
 
+%action--touch{
+
+  @include _p-button-text-touch( #333 );
+  @include block;
+
+}
+
 //action color variants
 @each $name, $color in $action-colors{
 
     %action--#{$name}{
-        @include _p-button-standard( $color, #fff );
-        @include block;
+      @include _p-button-standard( $color, #fff );
+      @include block;
     }
 
     %action--#{$name}%action--child{
-        @include _p-button-basic( $color );
+      @include _p-button-basic( $color );
     }
 
     %action--#{$name}%action--min{
-        @include _p-button-text( $color );
-    }    
+      @include _p-button-text( $color );
+    }   
+
+    %action--#{$name}%action--touch{
+      @include _p-button-text-touch( $color );
+    } 
 
 }
 
@@ -191,4 +202,24 @@
 
 }
 
+//leadigng action
+%action--lead{
+
+  padding: .25em 1em;
+  height: auto;
+  @include block;
+
+  %action__icon{
+    font-size: 1.5em;
+    line-height: 1.6em;
+    height: 1.25em;    
+    display: block;
+  }
+
+  %action__text{
+    display: block;
+  }
+
+
+}
 

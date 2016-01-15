@@ -1,0 +1,7 @@
+
+
+%caption-block__heading{
+	display: block;
+	margin-bottom: map-get( $layout-rem-spacing, sm ) + em;
+	@include block;
+}

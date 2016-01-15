@@ -1,0 +1,13 @@
+
+
+
+%caption-block{
+
+    background-color: map-get( $colors, primary );
+    color: #fff;
+    display: block;
+    text-align: center;
+    padding: map-get( $layout-rem-spacing, sm ) + em;    
+	@include block;
+
+}

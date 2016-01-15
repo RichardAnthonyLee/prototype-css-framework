@@ -74,7 +74,7 @@
 
 %form__control--child{
 
-	border: 1em solid;
+	border: .1em solid;
 	border-color: inherit;
 	color: inherit;
 	background: transparent;
@@ -87,6 +87,7 @@
 
 	&:focus, &:checked{
 
+	    border: .1em solid;
 	    border-color: inherit;
 	    color: inherit;
 	    background: transparent;
@@ -132,8 +133,8 @@
 
         position: absolute;
         right: auto;
-        left: .4em;
-    	top: .5em;
+        top: 0px;
+        left: 0px;
         bottom: auto;
         font-size: .9em;
 

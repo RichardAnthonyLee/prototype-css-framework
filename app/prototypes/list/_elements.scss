@@ -1,0 +1,37 @@
+
+
+%list__item{
+
+	display: block;
+	@include single-transition( all, .2s, ease-in-out );
+	@include block;
+	position: relative;
+
+	&::after{
+		content: "";
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		width: 190px;
+		margin-left: -95px;
+		height: 0px;
+		border-bottom: 1px solid rgba( #333, .2 );
+	}
+
+	&:last-child::after{
+		display: none;
+	}
+
+}
+
+
+%list__action{
+
+	display: block;
+	@include block;
+   
+	&:hover{
+		background-color: rgba( 0, 0, 0, .05 );
+	}
+
+}

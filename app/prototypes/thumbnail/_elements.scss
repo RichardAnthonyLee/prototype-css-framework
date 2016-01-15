@@ -1,0 +1,86 @@
+
+
+
+%thumbnail__header,
+%thumbnail__info{
+
+	position: absolute;
+	display: block;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	@include block;
+	@include single-transition( all, .3s, ease-in-out );
+
+}
+
+
+%thumbnail__heading{
+
+	display: block;
+	@include block;
+}
+
+
+%thumbnail__details{
+
+	display: block;
+	@include util-clearfix;
+	padding: 30px;
+	@include block;
+
+}
+
+
+%thumbnail__inner{
+
+	position: absolute;
+	top: 50%;
+	margin-top: -50px; /* hack for vertical align, performed in js */
+	display: block;
+	width: 100%;
+	left: 0px;
+	right: 0px;	
+	@include block;
+
+}
+
+
+%thumbnail__visual{
+
+	@include block;
+    @include util-image-wrapper( 80% );
+    @include single-transition( transform, 1s, ease-in-out );
+
+	@include min-screen( map-get( $screen-sizes, smd ) ){
+
+		@include util-image-wrapper( map-get( $thumbnail-sizes, md ) );
+
+	}
+
+}
+
+
+%thumbnail__image{
+
+	@include block;
+	width: 100%;
+    @include util-wrapped-image( false );
+
+}
+
+
+%thumbnail__info{
+
+	top: 100%;
+	background-color: rgba( map-get( $colors, primary ) , 70% );
+	@include block;
+
+}
+
+%thumbnail__header{
+
+	top: 0px;
+
+}

@@ -9,30 +9,26 @@
 }
 
 
+%section__heading{
+
+	text-align: center;
+	@include block;	
+
+}
+
+
 %section__row{
 
 	@include util-clearfix;
 	@include block;  
-
-    @include min-screen( map-get( $screen-sizes, sm ) ){
-
-        margin-left: -20px;
-        margin-right: -20px;
-
-    }
 
 }
 
 
 %section__column{
 
-
-	display: block;
-	@include util-rem( margin, map-get( $layout-rem-spacing, md ) auto );
-
-    padding-left: 20px;
-    padding-right: 20px;
-
+	display: block;  
+	margin: 0px auto;
 
 	@include max-screen( map-get( $screen-sizes, sm ) ){
 

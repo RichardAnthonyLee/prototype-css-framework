@@ -1,0 +1,16 @@
+
+
+
+%block{
+
+	@include util-rem( padding, map-get( $layout-rem-spacing, sm ) 0px );
+	position: relative;
+	@include block;  
+
+	@include max-screen( map-get( $screen-sizes, sm ) ){
+
+		text-align: center;
+
+	}
+
+}

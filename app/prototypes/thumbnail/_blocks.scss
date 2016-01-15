@@ -1,0 +1,26 @@
+
+
+
+%thumbnail{
+
+	display: inline-block;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	@include block;
+
+}
+
+%thumbnail:hover{
+
+
+	%thumbnail__header{
+		top: -100%;
+	}
+
+	%thumbnail__info{
+		top: 0px;
+	}
+
+
+}
